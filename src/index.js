@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Mascotas from "./components/Mascotas/Mascotas";
+import Login from "./components/Login/Login";
+import Navbar from "./components/NavBar/Navbar";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <Routes>
+                <Route path="/" element={<Login/>} />
+            <Route path="/" element={<App/>}>
+                <Route path="/mascota" element={<Mascotas/>} />
+            </Route>
+        </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
