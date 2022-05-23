@@ -4,7 +4,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Mascotas from "./components/Mascotas/Mascotas";
+import SearchMascotas from "./components/SearchMascotas/SearchMascotas";
 import Login from "./components/Login/Login";
 import Navbar from "./components/NavBar/Navbar";
 
@@ -14,7 +14,7 @@ ReactDOM.render(
         <Routes>
                 <Route path="/" element={<Login/>} />
             <Route path="/" element={<App/>}>
-                <Route path="/mascota" element={<Mascotas/>} />
+                <Route path="/mascota" element={<SearchMascotas/>} />
             </Route>
         </Routes>
     </BrowserRouter>

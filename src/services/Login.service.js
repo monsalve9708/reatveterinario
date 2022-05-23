@@ -3,7 +3,7 @@ import {retry} from "rxjs";
 
 export class LoginService{
 
-   async login(login){
+   login(login){
         var myHeaders = new Headers();
             myHeaders.append("Content-Type","application/x-www-form-urlencoded");
             myHeaders.append('Authorization', 'Basic YW5ndWxhcmFwcDoxMjM0NQ==');
@@ -20,7 +20,7 @@ export class LoginService{
                 'Authorization':'Basic YW5ndWxhcmFwcDoxMjM0NQ=='
             },
             body: params };
-        var myRequest = await fetch('http://18.189.13.197:8080/huellassanas/oauth/token',myInit);
+        var myRequest = fetch('http://18.189.13.197:8080/huellassanas/oauth/token',myInit);
 
         return myRequest;
     }

@@ -16,14 +16,17 @@ const Login = ()=>{
         setSw(false);
         setError(false);
        e.preventDefault();
-       var login = new LoginService().login({user,pass}).
-       then(res => {
+       var login = new LoginService().login({user,pass})
+           .then(res => {
            if (res.ok){
-           window.location.href = '/mascota'
+           window.location.href = '/mascota';
            }
            else {
               setSw(true);
            }
+           return res.json();
+       }).then(data => {
+           localStorage.setItem("token",data.value);
        })
            .catch(error => {
                setError(true);
